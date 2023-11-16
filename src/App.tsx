@@ -35,6 +35,7 @@ function VideoList(props: VideoListProps) {
   );
 }
 
+//useState для хранения списка видео
 const App: React.FC = () => {
   const [list, setList] = useState([
     {

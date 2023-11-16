@@ -5,10 +5,13 @@ interface DateTimePrettyProps {
     date: string;
 }
 
-//HOC
+//HOC (Higher-Order Component)
 const withFormattedDate = (WrappedComponent: React.ComponentType<DateTimePrettyProps>) => {
+    //Возвращаем новый компонент, который оборачивает переданный компонент
     return (props: DateTimePrettyProps) => {
+        //Форматируем дату
         const formattedDate = formatDateTime(props.date);
+        //Возвращаем обернутый компонент с датой
         return <WrappedComponent {...props} date={formattedDate}/>
     };
 };
